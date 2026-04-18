@@ -1,6 +1,7 @@
 package com.example.userinfoms;
 
 import com.example.userinfoms.dto.StudentCriterias;
+import com.example.userinfoms.enums.Role;
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.*;
@@ -48,6 +49,11 @@ public class StudentInfo {
     @Column(name = "skill")
     @Builder.Default
     private List<String> skills = new ArrayList<>();
+
+    private String password;
+
+    @Enumerated(EnumType.STRING)
+    private Role role;
 
     @Embedded
     private StudentCriterias studentCriterias;
