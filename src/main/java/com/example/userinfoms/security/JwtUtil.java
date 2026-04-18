@@ -1,4 +1,4 @@
-package com.example.userinfoms.util;
+package com.example.userinfoms.security;
 
 import com.example.userinfoms.enums.Role;
 import io.jsonwebtoken.Claims;

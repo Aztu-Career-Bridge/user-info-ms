@@ -1,4 +1,4 @@
-package com.example.userinfoms.util;
+package com.example.userinfoms.security;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

@@ -3,8 +3,8 @@ package com.example.userinfoms.controller;
 
 import com.example.userinfoms.service.AuthService;
 import com.example.userinfoms.shares.ApiResponseDto;
-import com.example.userinfoms.util.LoginRequest;
-import com.example.userinfoms.util.RegisterRequest;
+import com.example.userinfoms.security.LoginRequest;
+import com.example.userinfoms.security.RegisterRequest;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

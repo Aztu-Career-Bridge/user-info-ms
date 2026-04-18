@@ -1,4 +1,4 @@
-package com.example.userinfoms.util;
+package com.example.userinfoms.security;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
