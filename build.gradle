@@ -61,4 +61,5 @@ compileJava {
 
 tasks.named('test') {
     useJUnitPlatform()
+
 }
