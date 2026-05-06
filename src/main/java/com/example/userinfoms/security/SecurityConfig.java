@@ -1,6 +1,7 @@
 package com.example.userinfoms.security;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -14,6 +15,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 @Configuration
 @EnableWebSecurity
+@Slf4j
 @RequiredArgsConstructor
 public class SecurityConfig {
 
@@ -21,6 +23,7 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        log.info("==> SecurityConfig is loaded");
         http
                 .csrf(csrf -> csrf.disable())
                 .sessionManagement(s -> s
