@@ -33,4 +33,4 @@ logging:
 env:
   jwt:
       secret: your-256-bit-secret-key-here-make-it-long
-      expiration: 86400000  # 24 часа в миллисекундах
+      expiration: 86400000

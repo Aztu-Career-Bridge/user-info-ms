@@ -33,6 +33,7 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.POST,   "/api/v1/students").hasAnyRole("STUDENT", "ADMIN")
                         .requestMatchers(HttpMethod.PUT,    "/api/v1/students/**").hasAnyRole("STUDENT", "ADMIN")
                         .requestMatchers(HttpMethod.DELETE, "/api/v1/students/**").hasAnyRole("STUDENT", "ADMIN")
+                        .requestMatchers(HttpMethod.GET, "/api/v1/students/**").permitAll()
                         // всё остальное — только admin
                         .anyRequest().hasRole("ADMIN")
                 )
