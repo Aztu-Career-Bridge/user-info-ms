@@ -29,15 +29,12 @@ public class SecurityConfig {
                 .sessionManagement(s -> s
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
-                        // публичные
                         .requestMatchers("/api/v1/auth/**").permitAll()
-                        .requestMatchers("/swagger-ui/**", "/v3/api-docs/**").permitAll()
-                        // студент: только своё POST/PUT/DELETE
-                        .requestMatchers(HttpMethod.POST,   "/api/v1/students").hasAnyRole("STUDENT", "ADMIN")
-                        .requestMatchers(HttpMethod.PUT,    "/api/v1/students/**").hasAnyRole("STUDENT", "ADMIN")
+                        .requestMatchers("/swagger-ui.html", "/swagger-ui/**", "/v3/api-docs/**").permitAll()
+                        .requestMatchers(HttpMethod.POST,   "/api/v1/students").permitAll()
+                        .requestMatchers(HttpMethod.PUT,    "/api/v1/students/**").permitAll()
                         .requestMatchers(HttpMethod.DELETE, "/api/v1/students/**").hasAnyRole("STUDENT", "ADMIN")
                         .requestMatchers(HttpMethod.GET, "/api/v1/students/**").permitAll()
-                        // всё остальное — только admin
                         .anyRequest().hasRole("ADMIN")
                 )
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
